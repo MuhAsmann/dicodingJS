@@ -10,30 +10,21 @@
     <h1>Testing</h1>
 
     <script>
-        // const user = {
-        //     firstName:"Muhammad",
-        //     lastName:"Asman"
-        // }
+    //   const countDown = (start) => {
+    //     do {
+    //       console.log(start);
+    //       start -= 1;
+    //     } while (start > 0);
+    //   };
 
-        // const renameUser = (newLastName, user) => {
-        //     user.lastName = newLastName;
-        // }
+    //   countDown(10);
 
-        // renameUser("Ganteng", user);
+      const countDown = (start) => {
+        console.log(start);
+        if (start > 0) countDown(start - 1);
+      };
 
-        // tujuan tercapai tapi itu bukanlah konsep functional programing
-
-        const user = {
-            firstName : "Muhammad",
-            lastName : "Asman"
-        }
-
-        const renameUser = (newLastName, user) =>{
-            return {...user, lastName:newLastName};
-        }
-
-        const newName = renameUser("ganteng", user)
-        console.log(newName);
+      countDown(10);
     </script>
   </body>
 </html>
