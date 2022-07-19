@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <h1>Testing</h1>
 
-
     <script>
-        // const human = new Object();
-        // human.firstName = "Muhammad";
+      // const createPersonWithAge = (age, person) => {
+      //         person.age = age;
+      //         return person;
+      //     };
 
-        // console.log(human.firstName);
+      //     const person = {
+      //         name: 'Bobo'
+      //     };
 
-        // const orang = {};
-        // orang.nama = "Muhammad";
+      //     const newPerson = createPersonWithAge(18, person);
 
-        // console.info(orang.nama)
+      //     console.log({
+      //         person,
+      //         newPerson
+      //     });
 
-        const Car = function (roda, warna){
-            this.roda = roda;
-            this.warna = warna;
-            this.keterangan = function(){
-                return "Mobil Saya Beroda " + this.roda + "Berwarna " + this.warna;
-            };
-        }
+      const createPersonWithAge = (age, person) => {
+        return { ...person, age };
+      };
 
-        let A6641 = new Car(4, "Merah");
-        let keterangan = A6641.keterangan();
-        console.log(keterangan) 
+      const person = {
+        name: "Bobo",
+      };
+
+      const newPerson = createPersonWithAge(18, person);
+
+      console.log({
+        person,
+        newPerson,
+      });
     </script>
-</body>
+  </body>
 </html>
