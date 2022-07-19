@@ -12,14 +12,27 @@
 
 
     <script>
-        let x =10;
+        // const human = new Object();
+        // human.firstName = "Muhammad";
 
-        if(x<20){
-            console.log("kamu masih bocil");
-        }else{
-            console.log("Kamu sudha dewasa")
+        // console.log(human.firstName);
+
+        // const orang = {};
+        // orang.nama = "Muhammad";
+
+        // console.info(orang.nama)
+
+        const Car = function (roda, warna){
+            this.roda = roda;
+            this.warna = warna;
+            this.keterangan = function(){
+                return "Mobil Saya Beroda " + this.roda + "Berwarna " + this.warna;
+            };
         }
-            
+
+        let A6641 = new Car(4, "Merah");
+        let keterangan = A6641.keterangan();
+        console.log(keterangan) 
     </script>
 </body>
 </html>
