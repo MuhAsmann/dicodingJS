@@ -10,16 +10,18 @@
     <h1>Testing</h1>
 
     <script>
-      const scores = [70, 85, 90];
-      const minimumScore = 65;
+      const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
 
-      const examPassed = scores.every((score) => score >= minimumScore);
-      console.log(examPassed);
+        for (let i = 0; i < names.length; i++) {
+          if (names[i] === 'Jeff') continue; // Bisa!
 
-      /**
-        output
-        true
-        **/
+          console.log(`Hello, ${names[i]}!`);
+        }
+
+        names.forEach((name) => {
+          if (name === 'Jeff') //continue; // Tidak Bisa!
+          console.log(`Hello, ${name}`);
+        });
     </script>
   </body>
 </html>
