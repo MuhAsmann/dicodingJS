@@ -10,34 +10,10 @@
     <h1>Testing</h1>
 
     <script>
-      // const array = [1, "", "asman", 20, "Muhammad", false];
+      const nilai = [1,2,3,4,5,6];
+      const nilaiBaru = nilai.some((item) => item % 2 === 0);
 
-      // array.filter((item) => Boolean(item));
-
-      // console.log(array);
-
-      const students = [
-        {
-          name: "Harry",
-          score: 60,
-        },
-        {
-          name: "James",
-          score: 88,
-        },
-        {
-          name: "Ron",
-          score: 90,
-        },
-        {
-          name: "Bethy",
-          score: 75,
-        },
-      ];
-
-      const nilaiBaru = students.reduce((acc, student) => acc + student.score, 0);
-
-      console.log(nilaiBaru)
+      console.log(nilaiBaru);
     </script>
   </body>
 </html>
