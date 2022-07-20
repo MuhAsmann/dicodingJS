@@ -35,11 +35,9 @@
         },
       ];
 
-      const eligibleForScholarshipStudents = students.filter(
-        (student) => student.score > 85
-      );
+      const nilaiBaru = students.reduce((acc, student) => acc + student.score, 0);
 
-      console.log(eligibleForScholarshipStudents);
+      console.log(nilaiBaru)
     </script>
   </body>
 </html>
