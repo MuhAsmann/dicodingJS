@@ -10,12 +10,36 @@
     <h1>Testing</h1>
 
     <script>
-      const array = [1,"asman", 20, "Muhammad"];
+      // const array = [1, "", "asman", 20, "Muhammad", false];
 
-      array.map((item)=>{
-        return console.log(item);
-      })
+      // array.filter((item) => Boolean(item));
 
+      // console.log(array);
+
+      const students = [
+        {
+          name: "Harry",
+          score: 60,
+        },
+        {
+          name: "James",
+          score: 88,
+        },
+        {
+          name: "Ron",
+          score: 90,
+        },
+        {
+          name: "Bethy",
+          score: 75,
+        },
+      ];
+
+      const eligibleForScholarshipStudents = students.filter(
+        (student) => student.score > 85
+      );
+
+      console.log(eligibleForScholarshipStudents);
     </script>
   </body>
 </html>
