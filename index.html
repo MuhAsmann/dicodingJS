@@ -10,17 +10,17 @@
     <h1>Testing</h1>
 
     <script>
-      const data = [1,2,3,4,5];
-
+      const data = '{"age":20}';
+      console.log(data);
 
       try{
-        console.log(data)
-        err;
-        console.log("Hello")
+        let user = JSON.parse(data);
+        if(!user.name){
+          throw new SyntaxError("'name' is required.");
+        }
+        console.log(user)
       }catch(err){
-        console.log(err.massage)
-        console.log(err.name)
-        console.log(err.stack)
+        console.log(err.message)
       }
     </script>
   </body>
