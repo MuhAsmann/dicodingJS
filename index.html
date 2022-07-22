@@ -10,7 +10,7 @@
     <h1>Testing</h1>
 
     <script>
-      const data = '{"age":20}';
+      const data = '{"name":"Asman","age":20}';
       console.log(data);
 
       try{
@@ -19,8 +19,17 @@
           throw new SyntaxError("'name' is required.");
         }
         console.log(user)
+        
+        errorCode;
+
       }catch(err){
-        console.log(err.message)
+        if(err instanceof SyntaxError){
+          console.log(`JSON Error : ${err.message}`);
+        }else if(err instanceof ReferenceError){
+          console.log(err.message)
+        }else{
+          console.log(err.stack);
+        }
       }
     </script>
   </body>
