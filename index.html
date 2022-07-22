@@ -10,30 +10,68 @@
     <h1>Testing</h1>
 
     <script>
-      const stock = {
-        coffeBean : 1000,
-        water : 200,
+      const state = {
+        stock : {
+          coffe : 1000,
+          water : 1,
+        },
+        sibuk : false
       }
 
-      const checkStock = () =>{
+      const cekMesin= () => {
         return new Promise((resolve, reject)=>{
-          if(stock.coffeBean >= 100 && stock.water >= 10){
-            resolve("Stock Cukup, mari buat coffe");
-          }else{
-            reject("Stock tidak cukup, mari tambah persediaan")
-          }
+          setTimeout(()=>{
+            if(!state.sibuk){
+              resolve("Mesin Bisa digunakan");
+            }else{
+              reject("Mesin sedang sibun");
+            }
+          },1000);
         })
       }
 
-      const handleSuccses = (resolvedValue) => {
-        console.log(resolvedValue);
+      const cekStok = () => {
+        return new Promise((resolve, reject)=>{
+          state.sibuk = true;
+          setTimeout(()=>{
+            if (state.stock.coffe >= 100 && state.stock.water >= 100){
+              resolve("Stock Mencukupi");
+            }else{
+              reject("Stock tidak cukup");
+            }
+          },1500);
+        })
       }
 
-      const handleFailure = (rejectedValue) => {
-        console.log(rejectedValue);
+      const buatKopi = () => {
+        console.log("Membuat Kopi anda");
+        return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+            resolve("Kopi sudah jadi");
+          },2000);
+        })
       }
 
-      checkStock().then(handleSuccses, handleFailure);
+      function buatKopiEnak (){
+        cekMesin()
+        .then((value)=>{
+          console.log(value);
+          return cekStok();
+        })
+        .then((value)=>{
+          console.log(value);
+          return buatKopi();
+        })
+        .then((value)=>{
+          console.log(value);
+          state.sibuk=false;
+        })
+        .catch(rejectedReason => {
+          console.log(rejectedReason);
+          state.sibuk=false;
+        });
+      }
+      buatKopiEnak();
     </script>
   </body>
 </html>
