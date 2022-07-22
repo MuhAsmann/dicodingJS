@@ -10,18 +10,18 @@
     <h1>Testing</h1>
 
     <script>
-      const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+      const data = [1,2,3,4,5];
 
-        for (let i = 0; i < names.length; i++) {
-          if (names[i] === 'Jeff') continue; // Bisa!
 
-          console.log(`Hello, ${names[i]}!`);
-        }
-
-        names.forEach((name) => {
-          if (name === 'Jeff') //continue; // Tidak Bisa!
-          console.log(`Hello, ${name}`);
-        });
+      try{
+        console.log(data)
+        err;
+        console.log("Hello")
+      }catch(err){
+        console.log(err.massage)
+        console.log(err.name)
+        console.log(err.stack)
+      }
     </script>
   </body>
 </html>
